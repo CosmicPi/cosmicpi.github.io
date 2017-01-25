@@ -26,7 +26,8 @@ github_username:  CosmicPi
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
+#theme: jekyll-theme-hacker
+theme: minima
 gems:
   - jekyll-feed
 exclude:
