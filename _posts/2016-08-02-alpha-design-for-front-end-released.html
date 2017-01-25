@@ -1,0 +1,63 @@
+---
+layout: post
+status: publish
+published: true
+title: (Alpha) Design for front end released
+author:
+  display_name: James Devine
+  login: james
+  email: devine.jd@gmail.com
+  url: ''
+author_login: james
+author_email: devine.jd@gmail.com
+wordpress_id: 221
+wordpress_url: http://cosmicpi.org/?p=221
+date: '2016-08-02 06:40:24 +0200'
+date_gmt: '2016-08-02 05:40:24 +0200'
+categories:
+- Blog
+tags: []
+comments:
+- id: 2263
+  author: Philipp
+  author_email: foedischp@googlemail.com
+  author_url: ''
+  date: '2016-08-16 12:24:53 +0200'
+  date_gmt: '2016-08-16 11:24:53 +0200'
+  content: "The link for the zip file is down:\r\nhttp:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4547&#47;50x50mm_SiPM_carrier_in_603.zip"
+- id: 2264
+  author: James Devine
+  author_email: devine.jd@gmail.com
+  author_url: ''
+  date: '2016-08-16 12:57:06 +0200'
+  date_gmt: '2016-08-16 11:57:06 +0200'
+  content: Well spotted! Here is an updated link, <a href="http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4552&#47;SiPM_Board_603_OHWR.zip"
+    rel="nofollow">http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4552&#47;SiPM_Board_603_OHWR.zip<&#47;a>
+    and I'll fix the article too!
+- id: 2266
+  author: Philipp
+  author_email: foedischp@googlemail.com
+  author_url: ''
+  date: '2016-08-16 13:36:28 +0200'
+  date_gmt: '2016-08-16 12:36:28 +0200'
+  content: "I have several concerns with your design of the front end electronics.\r\n1.
+    The AD8014 is specified for a supply voltage from +4.5V to +12V. Why are you using
+    only +4V for the voltage supply?\r\n2. The input common mode voltage range for
+    the AD8014 is noted as +1.1V to +3.9V for a +5V supply. Your voltage divider with
+    1k and 10k at the positive input terminal generates a voltage far below that range.
+    Why do you use this low common mode voltage?\r\n\r\nBest regards, Philipp\r\n(You
+    can send me an email for discussion.)"
+---
+<p>We've just finalised and set our front end (the first analogue amplifier in the input chain) design out for an initial prototype production run. You can <a href="http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4552&#47;SiPM_Board_603_OHWR.zip">download it here<&#47;a>.</p>
+<p>[caption id="attachment_231" align="aligncenter" width="300"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;08&#47;closeup-analogue.png"><img class="size-medium wp-image-231" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;08&#47;closeup-analogue-300x183.png" alt="Analogue front end circuit design." width="300" height="183" &#47;><&#47;a> Analogue front end circuit design.[&#47;caption]</p>
+<p><strong>What is on the board?<&#47;strong></p>
+<p>The board is a 50x50 two layer PCB. On the bottom side it has pads for two <a href="http:&#47;&#47;advansid.com&#47;attachment&#47;get&#47;up_54_1432731416.pdf">Advansid&nbsp;ASD-NUV3S-P<&#47;a> SiPM's and two <a href="http:&#47;&#47;cpc.farnell.com&#47;molex&#47;22-27-2041&#47;pin-header-4-way-lock&#47;dp&#47;CN09580">Molex 2.54mm pitch connectors <&#47;a>(pinned out to be suitable for connection to an Arduino DUE, provided you find a bias voltage elsewhere for the SiPMs). On the top side it has two AD8014 SOT-23 amplifiers, connected as voltage mode amplifiers and a dedicated 4V linear low drop-out regulator. The reason for the additional voltage rail is to isolate high frequency noise (achieved in theory by having two ferrites and no ground&#47;voltage plane on the PCB).</p>
+<p><strong>How does it fit together?<&#47;strong></p>
+<p>The idea is that this PCB will be glued on top of a scintillator slab (dimensions 65x65 or greater, 10mm thickness), which will then be wrapped in a reflective foil. The two Molex style pin headers will be used to connect and mechanically fasten it to the main PCB, which will be a 100x120mm dual layer board. Six additional holes are provided for small nylon fixing bolts, however only 4 are positioned for use in this typical configuration, the other two are provided just in case someone wants to plug it in differntly. As part of final assembly, the board will be connected to the scintillator at the SiPM modules using a bubble free (vacuum mixed) optical adhesive (basically an epoxy).</p>
+<p><strong>What else?<&#47;strong></p>
+<p>In the zip file we have also provided an <a href="http:&#47;&#47;www.linear.com&#47;designtools&#47;software&#47;">LT Spice model<&#47;a>, which has been used to pick the component values. There are typically two modes for operating an SiPM: Voltage or Current. Current mode is preferred as it preserves the fast response time of the device which is ideal for timing applications (typically <a href="https:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Positron_emission_tomography">PET<&#47;a>, but it would also be nice for Cosmic Pi). In the current configuration of our design we are using voltage mode, as it's simpler to model and higher voltage gains can be achieved with a single stage (the more observant will already know that our<a href="http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4149&#47;frontendampcosmicpi.sch"> initial analogue prototypes&nbsp;(EagleCAD format)&nbsp;<&#47;a>had 3 stages of amplification, followed by 2 stages of pulse shaper). This design provides amplification and some pulse shaping in a single stage. There are 0 Ohm and NM (Not Mounted) components on the PCB that enable it to be re-configured for transimpedance operation, which is something we would like to try in the future. <a href="https:&#47;&#47;web.physik.rwth-aachen.de&#47;~hebbeker&#47;theses&#47;schumacher_master.pdf">This masters thesis<&#47;a> provides a great description of the details of transimpedance amplifiers for SiPM applications.</p>
+<p>&nbsp;</p>
+<p>[caption id="attachment_229" align="aligncenter" width="667"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;08&#47;analogue2.png"><img class="size-full wp-image-229" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;08&#47;analogue2.png" alt="Revised front end amplification stage" width="667" height="648" &#47;><&#47;a> Revised front end amplification stage[&#47;caption]</p>
+<p><strong>Does it work yet?<&#47;strong></p>
+<p>We don't know! We've ordered the PCB's and the parts, we will assemble them as soon as we can and test it. Until then, build at your own risk! You can <a href="http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4547&#47;50x50mm_SiPM_carrier_in_603.zip">download the zip file containing the Eagle CAD files, gerbers, BOM and LT Spice model here. <&#47;a>If you do build it we would love you to share your feedback with us. For reference we are using a <a href="https:&#47;&#47;www.google.com&#47;url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=2&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjhhqTfgKLOAhWFLB4KHUSgAsIQFggjMAE&amp;url=http%3A%2F%2Fwww.crystals.saint-gobain.com%2FuploadedFiles%2FSG-Crystals%2FDocuments%2FSGC%2520Organics%2520Brochure.pdf&amp;usg=AFQjCNFCvYgSNpSy170ivH-JtY3NXuDkHA&amp;sig2=XsFANyokbw9h9KgWpnubxQ&amp;bvm=bv.128617741,d.dmo">BC-408<&#47;a> equivalent scintillator called<a href="http:&#47;&#47;www.eljentechnology.com&#47;index.php&#47;products&#47;plastic-scintillators&#47;ej-200-ej-204-ej-208-ej-212"> EJ-200.<&#47;a> We expect to test it around the end of August 2016. If you have any questions please don't hesitate to get in touch!</p>
+<p>Update - the design files have been changed a little and the links updated. We received the circuit boards on the 15th August and plan to have them tested by the end of the month. Watch this space for future updates!</p>

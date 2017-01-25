@@ -1,0 +1,105 @@
+---
+layout: post
+status: publish
+published: true
+title: 'From a hackathon to another : a year of CosmicPi evolution'
+author:
+  display_name: Leïla Haegel
+  login: leila
+  email: leila.haegel@gmail.com
+  url: ''
+author_login: leila
+author_email: leila.haegel@gmail.com
+wordpress_id: 115
+wordpress_url: http://cosmicpi.org/?p=115
+date: '2015-11-02 09:41:22 +0100'
+date_gmt: '2015-11-02 09:41:22 +0100'
+categories:
+- Blog
+tags: []
+comments:
+- id: 709
+  author: Bill Wallace
+  author_email: wwal4436@bigpond.net.au
+  author_url: ''
+  date: '2015-11-05 00:07:40 +0100'
+  date_gmt: '2015-11-05 00:07:40 +0100'
+  content: "Following your team's developments with great interest.\r\nI built the
+    Berkley Labs CRD in 2012 (the first in Australia) and gluing the scintillator
+    paddles directly to the glass-encased PM tubes produced some tense moments.\r\nYour
+    use of a fibre optics cable is intriguing.\r\nAre you gluing the fibre optics
+    cable directly onto the SiPMD's?\r\nRegards\r\nBill Wallace"
+- id: 727
+  author: Le&iuml;la Haegel
+  author_email: leila.haegel@cern.ch
+  author_url: ''
+  date: '2015-11-06 20:14:50 +0100'
+  date_gmt: '2015-11-06 20:14:50 +0100'
+  content: |-
+    Hi Bill,
+    yes, there is a connector holding the SiPM to the optic fiber and we'll glue them together.
+    It is not the easiest thing in the world to do, for sure ! But the neatest.
+- id: 1649
+  author: A Raspberry Pi cosmic ray detector from folk at CERN - Raspberry Pi
+  author_email: ''
+  author_url: https://www.raspberrypi.org/blog/raspberry-pi-cosmic-ray-detector-from-cern/
+  date: '2016-04-06 21:01:26 +0200'
+  date_gmt: '2016-04-06 20:01:26 +0200'
+  content: '[&#8230;] From a hackathon to another : a year of CosmicPi evolution [&#8230;]'
+- id: 1653
+  author: Steven Boelens
+  author_email: steven@boelens.info
+  author_url: ''
+  date: '2016-04-07 15:00:34 +0200'
+  date_gmt: '2016-04-07 14:00:34 +0200'
+  content: I think that the calculations published here are a factor 1000 larger than
+    in reality. The speed of light is not around 300 km&#47;s but 300 thousand km&#47;s.
+    This leads to a maximum  time difference in the signal for both ends of 0.725
+    ns and not 725 ns.
+- id: 1657
+  author: Le&iuml;la Haegel
+  author_email: leila.haegel@gmail.com
+  author_url: ''
+  date: '2016-04-08 15:29:55 +0200'
+  date_gmt: '2016-04-08 14:29:55 +0200'
+  content: Absolutely right, this is corrected. Thanks for checking the calculations
+    !
+---
+<p>On the first week-end of October, we were at CERN&acute;s Ideasquare participating in The Port 2015 hackathon. We gave an overview of the project in our final presentation, available to watch <a href="https:&#47;&#47;cds.cern.ch&#47;record&#47;2059362" target="_blank">here<&#47;a> and below.</p>
+<p>https:&#47;&#47;www.youtube.com&#47;watch?v=UEV_bZdW7LM</p>
+<p style="text-align: left;"><em>Our presentation at ThePort15 hackathon.<&#47;em><&#47;p><br />
+It was a good moment to gather and progress on making the CosmicPi, but also a good time to have a look backward as the team met thanks to the first hackathon by The Port in 2014.</p>
+<p>&nbsp;</p>
+<p><strong>&nbsp; Hackathon 2014<&#47;strong></p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;?p=14">James had since a little while the idea of building a cosmic ray detector<&#47;a>. Talking around at CERN, he discovered that few other people were actually planning to design one for schools, and all those people gathered as a team to share their skills.</p>
+<p>We had quite a lot of discussions about the design, and arrived at the first hackathon with minimal supply : the hardware part was a scintillator bar where the cosmic ray deposit energy&nbsp; when they cross it,&nbsp; an optic fiber to trap the light created by the cosmic ray, and a Silicon photomultiplier on each side&nbsp; to convert the light into electrons so they can be analysed by the computer.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;bar_small.gif"><img class="size-full wp-image-123 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;bar_small.gif" alt="bar_small" width="600" height="448" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>That's all folks !<&#47;em><&#47;p><br />
+We wrapped the scintillator bar with black tape so it does not produce signals due to all the ambient light. And we added two AdvanSiD boards, which have an amplifier circuit allowing to increase the signal amplitude, as it was too small to be seen on the oscilloscope.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0319.jpg"><img class="size-large wp-image-119 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0319-1024x574.jpg" alt="IMAG0319" width="474" height="266" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>A well-wrapped scintillator bar and the two amplifier boards.<&#47;em><&#47;p><br />
+And here we were ! Cosmic ray pulses on the oscilloscope !</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMG_7059.jpg"><img class="size-large wp-image-120 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMG_7059-1024x683.jpg" alt="IMG_7059" width="474" height="316" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>Yay !<&#47;em><&#47;p><br />
+&nbsp;</p>
+<p><strong>&nbsp;&nbsp; towards&nbsp; Hackathon 2015<&#47;strong></p>
+<p>But that was only the beginning. Then our head started to go all directions to think how we could go to the final product. First , we decided to increased the size of the scintillator to get more cosmic rays, which flux is ~1 per second per cm2. The curvy design of the fiber maximises the efficiency, the photons created by the cosmic ray being absorbed by the scintillator eventually.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0434-Medium.jpg"><img class="size-large wp-image-126 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0434-Medium-1024x574.jpg" alt="IMAG0434 (Medium)" width="474" height="266" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>The magic piece of scintillator without which we could not detector cosmic rays.<&#47;em><&#47;p><br />
+Then, we needed to make sure the signal was coming from cosmic rays, and not noise (i.e. every signal not due to cosmic ray but ambient light, dark noise of the photomultiplier... and mimicking the cosmic ray signal). To reject noise, we required the signals on both photomultipliers to be in coincidence, which means to happen during the same time window. The time window had to take into account that a signal occurring at one end, let's say the right one, would arrive earlier to the right photomultiplier than the left one. So how long does it take for a photon to go from one side to another ? The refractive index of the core of the fiber is ~1.45, and characterise the ratio of the velocity of photons on vacuum with regards to the material. Knowing that the speed of light 300 000 Km&#47;s, it means that inside the fiber it goes at 300 000 &#47; 1.45 = 209 000 Km&#47;s. In the case of the initial bar we had, the length of the bar being 15 cm, it takes ~0.72 ns to go from one end to the other. That is the minimum duration of the time window where we require two signals, but it is actually a little longer as it actually takes time for the cosmic ray to cross the scintillator.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0427.jpg"><img class="size-large wp-image-128 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0427-574x1024.jpg" alt="IMAG0427" width="474" height="846" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>A board that summarises the steps in the electronics. COIN is the coincidence of signals.<&#47;em><&#47;p><br />
+Now that we were sure we had cosmic rays, the question was, what was interesting to do with ? It appears that the cosmic ray flux changes with the atmospheric condition, so we added temperature, pressure and humidity sensors so one can monitor the weather. We also included GPS so the flux could be monitored in the function of the altitude, and an accelerometer to know the position (vertical, horizontal) of the CosmicPi.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;cosmicpi.png"><img class="size-medium wp-image-130 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;cosmicpi-268x300.png" alt="cosmicpi" width="268" height="300" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>The CosmicPi is now a little weather station !<&#47;em><&#47;p><br />
+We designed the prototype with Adafruit sensors, remained the question of how to get their data to the computer. We choosed to use an Arduino Due microcontroller to read the sensors. It is then connected to a Raspberry Pi to pre-process the data, store them and give them to the computer with an Ethernet cable.</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0438_explained.jpg"><img class="size-large wp-image-131 aligncenter" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;11&#47;IMAG0438_explained-1024x574.jpg" alt="IMAG0438_explained" width="474" height="266" &#47;><&#47;a></p>
+<p style="text-align: center;"><em>The cosmic ray energy is detected on the scintillator slab (1) from the photomultipliers powered with a DC power supply (2). Their output as well as the ones of a set of atmosphere sensors (3) is sent to the Arduino Due microcontroller (4) for digitisation before a Raspberry Pi (5) stores the output and sends it to the computer when connected by Ethernet.<&#47;em><&#47;p><br />
+So, it looks like we advanced well, no ? What is next to do is to design the analog part of the signal. The Raspberry Pi only takes digital signals, so the microcontroller digitises the output of the photomultipliers. The things is, the digitiser of the Arduino Due is quite slow with our two channels : it takes one value every 2 &mu;s, while our signal is about 20 ns, so 100 times faster ! The Arduino will not even have time to see it. So we need to design a shaper, which is a specific electronic circuit that increases the length of the signal. We managed to do this with bulky electronic modules, as shown on the video below, but the next step is to reduce it size to the CosmicPi size !</p>
+<p>https:&#47;&#47;www.youtube.com&#47;watch?v=S5T_BNaTJ1Q&feature=youtu.be</p>
+<p><em>A walk through the CosmicPi analog electronic test bench.<&#47;em></p>
+<p>&nbsp;</p>
+<p><strong>&nbsp; Hackathon 2015<&#47;strong></p>
+<p>https:&#47;&#47;www.youtube.com&#47;watch?v=Ku9R7wFBfww</p>
+<p><em>Loads of little details to check... and a little piece of code arriving soon !<br />
+<&#47;em></p>

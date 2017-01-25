@@ -1,0 +1,57 @@
+---
+layout: post
+status: publish
+published: true
+title: How to flash your Cosmic Pi!
+author:
+  display_name: James Devine
+  login: james
+  email: devine.jd@gmail.com
+  url: ''
+author_login: james
+author_email: devine.jd@gmail.com
+wordpress_id: 308
+wordpress_url: http://cosmicpi.org/?p=308
+date: '2016-12-07 22:48:09 +0100'
+date_gmt: '2016-12-07 22:48:09 +0100'
+categories:
+- Blog
+tags: []
+comments: []
+---
+<p>For those of you who are lucky enough to have just received a Cosmic Pi in the mail, you probably want to get it up and running ASAP. We've shipped them all with firmware that we tested, but in the meantime we've been making improvements including:</p>
+<ul>
+<li>Better control of the Bias voltage applied to the SiPM sensors, key to detecting Muons.<&#47;li>
+<li>Extraction of a unique serial number for your device - contained in the Arduino DUE inside the box.<&#47;li>
+<li>Other fixes and improvements (also feel free to suggest more in comments <a href="https:&#47;&#47;github.com&#47;CosmicPi&#47;cosmicpi-arduino">here<&#47;a>.<&#47;li><br />
+<&#47;ul><br />
+<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;11&#47;IMG_20161129_183422.jpg"><img class="aligncenter size-medium wp-image-290" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;11&#47;IMG_20161129_183422-300x225.jpg" alt="img_20161129_183422" width="300" height="225" &#47;><&#47;a></p>
+<p>All our code is on Github, so you can download it, modify it and re-upload it to share. If you have suggestions or code changes you think would be helpful for everyone, please submit them to us via Github!</p>
+<p>So now it's time to update the "Firmware" - i.e. embedded software, on your Cosmic Pi. You can do this in a number of ways, depending upon your operating system. As a general note, external power and GPS aren't needed when flashing your device, a single USB connection to a computer is sufficient.</p>
+<p><strong>Microsoft Windows or Apple OS X<&#47;strong></p>
+<p>Stage 1) Download and install the <a href="https:&#47;&#47;www.arduino.cc&#47;en&#47;Main&#47;Software">Arduino Integrated Development Environment (IDE).&nbsp; <&#47;a>You should install version 1.6.13 or later.</p>
+<p>Stage 2) Install the IDE, following the instructions from the Arduino download page. It should be a matter of clicking on the file you just downloaded and installing. You may require administrator privileges, depending upon how your system is configured.</p>
+<p>Stage 3) Go and download our latest Arduino firmware from <a href="https:&#47;&#47;github.com&#47;CosmicPi&#47;cosmicpi-arduino">here<&#47;a>. You can download it as a zip file from the button on the right hand side which says 'Clone or Download'. For those who use github already, you also copy the url provided by the download box into the command line and do a <em>git clone<&#47;em> into a new directory.</p>
+<p>Stage 4) Unpack the .zip file into a directory and navigate to &#47;CosmicPi-arduino-master directory. You will find all the firmware source code here. At the moment we're developing on Linux, so there are a couple of extra steps for non-linux users - you should delete the file "cosmicpi-arduino.ino" and rename the file "cosmicpi-arduino.cc" to "cosmicpi-arduino-master.ino"</p>
+<p>Stage 5) You can now open the file "cosmicpi-arduino-master.ino" in the Arduino IDE. You should connect your Cosmic Pi via the Programming USB port on the front of the box. In the Arduino environment you will need to:</p>
+<ul>
+<li>Go to the Tools Menu<&#47;li>
+<li>Go to the Boards > sub-menu<&#47;li>
+<li>Open the Board Manager<&#47;li>
+<li>Select the Arduino SAM boards (32-bits ARM Cortex-M3) option and make sure version 1.6.9 or later is installed.<&#47;li>
+<li>When this has downloaded, select "Arduino Due (Programming Port)" from the Tools|Boards menu<&#47;li>
+<li>Finally, select the communications port you are using for the board from the Tools|Port menu. It will normally be something that includes Arduino Due (Programming Port) in the description!<&#47;li><br />
+<&#47;ul><br />
+Stage 6) Press the tick button on the top row of icons in the Arduino IDE. This will compile the code into a binary, there should be no errors in the black box at the bottom. There may be some warnings (i.e. something isn't quite right, but it should still work) - we're trying to eliminate these, but they don't affect device function.</p>
+<p>Stage 7) Flash the board by pressing the arrow button next to the tick. If all goes well this should take a couple of minutes and you will get a confirmation in the bottom of the window that the board has been reset. You should see your Cosmic Pi start to work, and you can check that it provides you information by clicking on the magnifying glass in the top right of the Arduino IDE. Make sure to set the baud rate to 9600, otherwise your computer won't be able to correctly decode the output.</p>
+<p><strong>Linux (Ubuntu or Raspbian)<&#47;strong></p>
+<p>You can download the Arduino IDE if you're using an x86 computer (i.e. not a Raspberry Pi) - as per the Windows&#47;Apple instructions. However these instructions are focused on someone who wants to download a pre-compiled file for the Cosmic Pi and upload it directly.</p>
+<p>Stage 1) Download the binary from Github<a href="https:&#47;&#47;github.com&#47;CosmicPi&#47;cosmicpi-arduino-raspberry"> here<&#47;a>. For the purposes of this tutorial, it is assumed you will download&#47;unzip the binary to the &#47;home&#47;Desktop directory.</p>
+<p>Stage 2) Install <a href="https:&#47;&#47;github.com&#47;johngrantuk&#47;piupdue">Piupdue <&#47;a>by typing "pip install piupdue"</p>
+<p>Stage 3) Plug your Cosmic Pi in to the USB port of your computer. <em>Please note that if you are using this method you should connect to the Native USB port to flash, rather than the Programming port for normal use.<&#47;em></p>
+<p>Stage 4) Locate the local directory where piupdue.py has been installed by navigating to &#47; and searching for it using "find -iname "piupdue.py"". On Ubuntu it should be located in .&#47;usr&#47;local&#47;lib&#47;python2.7&#47;dist-packages&#47;piupdue&#47;. Navigate to this directory and type "piupdue.py -f ~&#47;home&#47;Desktop&#47; cosmicpi-arduino.ino.arduino_due_x.bin -p &#47;dev&#47;ttyACM0 -l errorlog.log"</p>
+<p>Stage 5) Wait, assuming everything is going ok, you'll see a bunch of messages on your screen. This process could take up to 30 minutes. If you get an error with the port you can try executing the command as SUDO, which will solve permissions problems with the serial ports, or checking that &#47;dev&#47;ttyACM0 is the correct serial port. This can be done by listing the serial devices with "find &#47;sys&#47;bus&#47;usb&#47;devices&#47;usb*&#47; -name dev", it may reveal that you should be using ttyACM1 or ttyUSB0 or ttyUSB1 for example.</p>
+<p>Stage 5) When the upload is completed your Cosmic Pi should start automatically.</p>
+<p><strong>My operating system isn't listed?<&#47;strong></p>
+<p>If you're using something that isn't Windows, Apple OS X or Linux, please drop us a line. We'd love to find out what alternative OS you are using, and we'll do our best to get you up and running.</p>
+<p>&nbsp;</p>

@@ -1,0 +1,110 @@
+---
+layout: post
+status: publish
+published: true
+title: The birth of Cosmic Pi
+author:
+  display_name: James Devine
+  login: james
+  email: devine.jd@gmail.com
+  url: ''
+author_login: james
+author_email: devine.jd@gmail.com
+wordpress_id: 14
+wordpress_url: http://cosmicpi.org/?p=14
+date: '2015-04-15 23:38:31 +0200'
+date_gmt: '2015-04-15 22:38:31 +0200'
+categories:
+- Blog
+tags: []
+comments:
+- id: 2235
+  author: Carl Pugh
+  author_email: carlpugh1@att.net
+  author_url: http://None%20at%20present
+  date: '2016-08-11 06:42:43 +0200'
+  date_gmt: '2016-08-11 05:42:43 +0200'
+  content: "I designed, built and wrote an article on a cosmic ray detector.\r\nUnfortunately
+    the article never got published. \r\nSome of the information in the article might
+    be useful for what you are doing.\r\nWould you like a copy of the article?\r\n\r\ncarlpugh1*att.net
+    \    Use @ instead of *\r\nHopefully I won't make anyone mad by posting the above
+    Email address."
+- id: 2239
+  author: James Devine
+  author_email: devine.jd@gmail.com
+  author_url: ''
+  date: '2016-08-11 21:43:10 +0200'
+  date_gmt: '2016-08-11 20:43:10 +0200'
+  content: Yes sounds great please share!
+---
+<p><em>The Cosmic Pi project was born out at The Port Hackathon, held at CERN in late 2014. The stealthily titled team X1 set their sights on the development of a low cost (<500 USD) cosmic ray detector, to be released under an open source license, for students, teachers and enthusiasts. James Devine explains how it all got started, and what the team are planning to do next.<&#47;em></p>
+<p>[caption id="attachment_15" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_20141102_192215.jpg"><img class="wp-image-15 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_20141102_192215-1024x768.jpg" alt="Version 1 with Banana for scale." width="474" height="356" &#47;><&#47;a> Version 1 with Banana for scale.[&#47;caption]</p>
+<p><strong><strong>&nbsp;<&#47;strong><&#47;strong></p>
+<p><b><i>Background<&#47;i><&#47;b></p>
+<p>Two years ago I got together with some of my friends to prototype an Android based cosmic ray detector, using a lot of the hardware developed by the ERGO cosmic ray pixel telescope, during the 2012 CERN Webfest hackathon. In the course of 48 hours we were able to prototype a detector using an Arduino ADK board, some hacking of a GM based pixel detector kindly provided by the folks at <a title="The Ergo Telescope" href="http:&#47;&#47;www.ergotelescope.org&#47;" target="_blank">ERGO<&#47;a> and a few lines of code.</p>
+<p>[caption id="attachment_16" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;2012-08-05-15-08-421.jpg"><img class="wp-image-16 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;2012-08-05-15-08-421-1024x768.jpg" alt="Inspired by the ERGO Project" width="474" height="356" &#47;><&#47;a> Inspired by the ERGO Project[&#47;caption]</p>
+<p>Although successful, our prototype showed the clear difficulties that the development of USB accessories for Android presented at the time. Sadly the situation hasn't improved in the interim, as demonstrated by the almost total absence of USB accessories for Android phones on the market. There was scope for significant cost savings in the ERGO design by using an android phone for GPS and the network uplink, however it wasn't really practical at the time and still isn't. We left our prototype, until a couple of years later the Raspberry Pi came out of the technological development oven. You can read the full backstory on my personal blog <a title="The origins of Cosmic Pi" href="https:&#47;&#47;pingu98.wordpress.com&#47;2012&#47;08&#47;05&#47;building-a-distributed-cosmic-ray-detector-in-a-weekend-at-cern-webfest&#47;" target="_blank">here<&#47;a>.</p>
+<p><b><i>Enter the Pi<&#47;i><&#47;b></p>
+<p>I've followed the development of the Raspberry Pi with interest over the last couple of years. Most of my personal projects are generally mobile in nature and use GPS, GPRS&#47;3G, SMS, Cameras, accelerometers and WiFi connectivity, so I didn't really see any attraction in doing anything with the Pi at first. However, since the Android USB interface remains so lamentably bad they are an option for anything that's going to need a hardwired connection to anything else.</p>
+<p>[caption id="attachment_17" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_20141102_192242.jpg"><img class="wp-image-17 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_20141102_192242-768x1024.jpg" alt="Cosmic Pi HAT, Raspberry Pi and a banana. " width="474" height="632" &#47;><&#47;a> Cosmic Pi HAT, Raspberry Pi and a banana.[&#47;caption]</p>
+<p>The other major development is the release of the Pi Hat spec, which enables Arduino style shields to be designed and plugged in on top of the B+ (and perhaps soon A+) models. This is where the Pi piqued my interest, since all the missing components for a cosmic ray detector can be combined into a Pi Hat PCB. This is the story of our progress so far in the development of our CosmicPi Hat...</p>
+<p><b><i>The Team<&#47;i><&#47;b></p>
+<p>[caption id="attachment_18" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_6954.jpg"><img class="wp-image-18 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_6954-1024x683.jpg" alt="Most of the team posing for a photo at the hackathon." width="474" height="316" &#47;><&#47;a> Most of the team posing for a photo at the hackathon.[&#47;caption]</p>
+<p>Following on from the progress on the Android detector, I got in touch with Hugo and Justin who had worked with me at the time and were still around CERN and interested. We then added a few specialists to the team:</p>
+<p>Cosimo - Detector electronics expert</p>
+<p>Martin - Grid Computing specialist and Pi enthusiast</p>
+<p>Etam, Ruslan and Leila - Our all star specialists in Muons and Muon detection</p>
+<p>Laurel - Another Muon expert from across the Atlantic.</p>
+<p>[caption id="attachment_24" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7034.jpg"><img class="wp-image-24 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7034-1024x683.jpg" alt="Hugo, refuelling during the hackathon marathon." width="474" height="316" &#47;><&#47;a> Hugo, refuelling during the hackathon marathon.[&#47;caption]</p>
+<p>Working on this project (so far!) has been one of the most enjoyable side-projects I've had since the last time we built a cosmic ray detector in 2012. I've been really impressed with the team's commitment and professionalism to the project since we started, I should add that everyone volunteered to join. It's amazing what a difference it makes to a project when your entire team is self-selecting, motivated to make something new, innovative and open source. We have agreed to split the development costs equally across the team and to put everyone's name on the output.</p>
+<p><b><i>The Goal: Capture, Store and Share<&#47;i><&#47;b></p>
+<p>[caption id="attachment_19" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7060.jpg"><img class="wp-image-19 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7060-1024x683.jpg" alt="Our prototype plastic scintillator stick." width="474" height="316" &#47;><&#47;a> Our prototype plastic scintillator stick.[&#47;caption]</p>
+<p>Our initial goal is to produce a small, cheap and (relatively) simple muon detector design, to be published under an open source license. This module will plug in to a Raspberry Pi B+, will include software capable of collecting, storing, sharing and analysing the data coming out of the detector and will use the computing power of the Pi to deliver this. We are aiming to bring a full 'slice' of the LHC into the home and the classroom:</p>
+<ul>
+<li>The Universe: Our source of free particles to detect<&#47;li>
+<li>A scintillator detector, highly sensitive stable and cheap to buy in volume<&#47;li>
+<li>Silicon Photomultipliers (SiPMT), compact modules which eliminate the need for High Voltage supplies<&#47;li>
+<li>A custom amplification and read out circuit design (This is hard work!)<&#47;li>
+<li>Ancillary sensors to monitor temperature, altitude, relative humidity and position<&#47;li>
+<li>A precise timing and trigger system, accurate to approx 300ns<&#47;li>
+<li>Grid storage layer, for all data collected<&#47;li>
+<li>Local webserver, to display detector performance<&#47;li>
+<li>Grid analysis layer, for reconstruction of cosmic ray shower<&#47;li><br />
+<&#47;ul><br />
+[caption id="attachment_23" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMAG0318.jpg"><img class="wp-image-23 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMAG0318-1024x574.jpg" alt="Using an external amplifier, we detected cosmic rays using our scintillator stick." width="474" height="266" &#47;><&#47;a> Using an external amplifier, we detected cosmic rays using our scintillator stick.[&#47;caption]</p>
+<p>When we've completed this task, we would like to bring this detector to as many people as possible, however this is going to have to be the subject of another post. We are aiming to have a build cost under $500 for volume manufacture (>100 units), however we need to finalise the design first.</p>
+<p><b><i>Tell me about the hardware, because I'm a geek.<&#47;i><&#47;b></p>
+<p>[caption id="attachment_20" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7023.jpg"><img class="wp-image-20 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7023-1024x683.jpg" alt="Our 3 first prototype boards. Produced in the early hours of the morning. " width="474" height="316" &#47;><&#47;a> Our 3 first prototype boards. Produced in the early hours of the morning.[&#47;caption]</p>
+<p>The prototype board (V1.0) comprised the following main elements:</p>
+<ul>
+<li>Murata xxx DC PSU<&#47;li>
+<li>Agilent Quadrature Encoder 32Bit 33MHz counter<&#47;li>
+<li>RF Solutions GPS<&#47;li>
+<li>Dedicated Analoge input stages<&#47;li>
+<li>Event Trigger Generation<&#47;li>
+<li>2 Channel Analoge to Digital Conversion over SPI<&#47;li>
+<li>Temperature, Pressure and Relative Humidity Sensors over I2C<&#47;li><br />
+<&#47;ul><br />
+[caption id="attachment_25" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_6959.jpg"><img class="wp-image-25 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_6959-1024x683.jpg" alt="Solder paste being applied to our PCB's" width="474" height="316" &#47;><&#47;a> Solder paste being applied to our PCB's[&#47;caption]</p>
+<p>After several iterations using EagleCad a workable circuit design was produced which fitted on a slightly oversize Pi Hat header. The circuits and PCB were designed mostly between Midnight and 3 AM, and consequently contained more mistakes than you would want on a production model. We're still in the process of completing the debugging of V1.0, so again more on this to follow. You can find the &lsquo;as built&rsquo; prototype design <a title="Cosmic Pi Schematics" href="http:&#47;&#47;www.ohwr.org&#47;projects&#47;cosmic-pi&#47;" target="_blank">here<&#47;a> in the CERN OHL repository (look in files) if you want to start working on it yourself. The main issues were related to mistakes in the footprints of SMT components, a few signals routed incorrectly due to errors in the schematics and a couple of signals that were forgotten and had to be added with jumper wires. All mistakes encountered during the hackathon weekend have been corrected and are included on the V1.1 schematic available here.</p>
+<p>[caption id="attachment_21" align="aligncenter" width="474"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7021.jpg"><img class="wp-image-21 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;IMG_7021-1024x683.jpg" alt="Our three prototypes, complete with a significant amount of re-work." width="474" height="316" &#47;><&#47;a> Our three prototypes, complete with a significant amount of re-work.[&#47;caption]</p>
+<p>Another significant feature of the V1.0 PCB is the need for a level shifter to convert between 3.3V and 5V logic for the quadrature encoder. For the next design iteration of the PCB we are going to replace the quadrature encoder and move entirely to 3.3V logic, again more on this to come.</p>
+<p>During the weekend we assembled three fully populated prototype boards, all of which were electrically functional. The following elements were operationally tested:</p>
+<ul>
+<li>-72V Murata PSU: found to be <-72V due to low load, needs more current flow to stabilise<&#47;li>
+<li>GPS operation and position fix, communications over UART<&#47;li>
+<li>ADC read-in over SPI, noise and errors not quantified<&#47;li>
+<li>Trigger input to Raspberry Pi and software functionality<&#47;li><br />
+<&#47;ul><br />
+The analog stage still requires fine tuning to match the impedance, gain and integration periods to the specific characteristics of the SiPMT being used. The signal generation (coincidence) also needs fine tuning before we can proceed to the next prototype.</p>
+<p><b><i>Software, because.<&#47;i><&#47;b></p>
+<p>[caption id="attachment_22" align="aligncenter" width="640"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;Screen-Shot-2014-11-02-at-18.46.55.png"><img class="wp-image-22 size-full" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;04&#47;Screen-Shot-2014-11-02-at-18.46.55.png" alt="Software screenshot" width="640" height="332" &#47;><&#47;a> Software screenshot[&#47;caption]</p>
+<p>During the weekend we tested routines written in Python. I'll need to ask Justin and Martin to write a software oriented post lated for some more information. The current software functionality is as follows:</p>
+<ul>
+<li>Read in data from the Cosmic Pi, specifically the ADC, Timing, Temperature, Pressure, Humidity<&#47;li>
+<li>Store&#47;share the data using the storage framework<&#47;li>
+<li>Analyse and visualise the data collected<&#47;li><br />
+<&#47;ul><br />
+The source code is available <a href="http:&#47;&#47;github.com&#47;cosmicpi&#47;cosmicpi">here<&#47;a>.</p>
+<p><b><i>And next?<&#47;i><&#47;b></p>
+<p>Since the hackathon we've been working hard on developing a second prototype, updating the design and working out all the kinks we found in Version 1. For all of you who love the idea but don't fancy building your own we are also planning a Kickstarter campaign to produce a batch of Cosmic Pi's for sale, so stay tuned for more updates. &nbsp;You can follow us at <a title="Cosmic Pi on Facebook" href="http:&#47;&#47;www.facebook.com&#47;cosmicpi" target="_blank">facebook.com&#47;cosmicpi<&#47;a> and on Twitter as <a title="Cosmic Pi Tweets" href="https:&#47;&#47;twitter.com&#47;cosmicpi" target="_blank">@cosmicpi<&#47;a></p>

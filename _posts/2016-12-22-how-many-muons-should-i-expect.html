@@ -1,0 +1,173 @@
+---
+layout: post
+status: publish
+published: true
+title: How many muons should I expect?
+author:
+  display_name: James Devine
+  login: james
+  email: devine.jd@gmail.com
+  url: ''
+author_login: james
+author_email: devine.jd@gmail.com
+wordpress_id: 322
+wordpress_url: http://cosmicpi.org/?p=322
+date: '2016-12-22 13:17:30 +0100'
+date_gmt: '2016-12-22 13:17:30 +0100'
+categories:
+- Blog
+tags: []
+comments:
+- id: 2824
+  author: guest
+  author_email: keine@keine.de
+  author_url: ''
+  date: '2016-12-30 11:27:59 +0100'
+  date_gmt: '2016-12-30 11:27:59 +0100'
+  content: I don't get it, you say people have received the unit but your blog posts
+    only indicate problems and there's no shop I can find where one could order the
+    unit. For me it looks like that the project is still in development.(?) Awesome
+    project though.
+- id: 2825
+  author: James Devine
+  author_email: devine.jd@gmail.com
+  author_url: ''
+  date: '2016-12-30 11:58:36 +0100'
+  date_gmt: '2016-12-30 11:58:36 +0100'
+  content: "Hello, \n\nTo answer your questions:\n\n1) So far we have produced 40
+    units, which have been distributed to schools who got them as a runner up prize
+    in the CERN beamline for schools competition.\n2) The units are able to detect
+    muons, however we are still fine tuning them to quantify and improve the signal
+    to noise ratio.\n3) The units are not on sale yet, it's open hardware so you are
+    encouraged to build your own in the interim. We are still improving things.\n\nFinally,
+    we're glad you think our project is awesome. Thanks for your feedback and please
+    stay tuned for future developments!"
+---
+<p>One thing we've been trying to grapple with recently whilst setting up the detection parameters for our first batch of Cosmic Pi units is how many muons we should be detecting. In this post we'll be using the <a href="http:&#47;&#47;stattrek.com&#47;probability-distributions&#47;poisson.aspx">Poisson distribution<&#47;a> to calculate the probability of a given muon arrival rate. Poisson is a fairly simple distribution and we only need one parameter (the expected rate) to make our calculations.</p>
+<p style="text-align: center;">P(<i>x<&#47;i>; &mu;) = (e<sup>-&mu;<&#47;sup>) (&mu;<sup>x<&#47;sup>) &#47; x!<&#47;p></p>
+<p style="text-align: center;"><em>x = the number of events<&#47;em><&#47;p></p>
+<p style="text-align: center;"><em>&mu; = the mean event rate<&#47;em><&#47;p></p>
+<p style="text-align: center;">e = 2.71828...<&#47;p><br />
+As a starting point, let's take the generally accepted figure of merit for the arrival of muons at sea level of 1 muon per minute per square centimeter. We'll convert this into a rate per mm2 per second:</p>
+<table style="height: 36px;" border="0" width="452" cellspacing="0">
+<colgroup span="2" width="85"><&#47;colgroup></p>
+<tbody>
+<tr>
+<td style="text-align: right;" align="right" height="17">0.0001666667<&#47;td></p>
+<td style="text-align: left;" align="left">Hz&#47;mm^-2<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+And then apply this rate to the area (note, not the volume - we assume for this exercise that all muons have vertical trajectories) of the 65mm x 65mm Cosmic Pi scintillator, which has an area of&nbsp; 4225mm2:</p>
+<table border="0" cellspacing="0">
+<colgroup span="2" width="85"><&#47;colgroup></p>
+<tbody>
+<tr>
+<td style="text-align: right;" align="right" height="17">0.7041666667<&#47;td></p>
+<td style="text-align: left;" align="left">Hz<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+Which gives us the expected mean rate for muons that will be passing through the slab in any given second. Since this is just an average value, there is also a probability that we will have 0 muons in a given second or more than 1 muon. This is very interesting to know, as it will help us to calibrate both the performance of the detector and our own expectations of what we should be detecting!</p>
+<p>If the Cosmic Pi was a perfect muon detector, we would expect to see 100% of all muons passing through, which would give us the following statistical distribution:</p>
+<table border="0" cellspacing="0">
+<colgroup span="12" width="85"><&#47;colgroup></p>
+<tbody>
+<tr>
+<td align="left" height="17">Events per second<&#47;td></p>
+<td align="right">0<&#47;td></p>
+<td align="right">1<&#47;td></p>
+<td align="right">2<&#47;td></p>
+<td align="right">3<&#47;td></p>
+<td align="right">4<&#47;td></p>
+<td align="right">5<&#47;td></p>
+<td align="right">6<&#47;td></p>
+<td align="right">7<&#47;td></p>
+<td align="right">8<&#47;td></p>
+<td align="right">9<&#47;td></p>
+<td align="right">10<&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td align="left" height="17">P(X=e)<&#47;td></p>
+<td align="right">0.49<&#47;td></p>
+<td align="right">0.35<&#47;td></p>
+<td align="right">0.12<&#47;td></p>
+<td align="right">0.03<&#47;td></p>
+<td align="right">0.01<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td align="left" height="17">P(X<=e)<&#47;td></p>
+<td align="right">0.49<&#47;td></p>
+<td align="right">0.84<&#47;td></p>
+<td align="right">0.97<&#47;td></p>
+<td align="right">0.99<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+Note that P(X=e) is the probability of getting exactly e events (0, 1, 2 etc.) within a given second and P(X<=e) is the cumulative probability of getting less than or equal to e events within a given second.</p>
+<p>[caption id="attachment_323" align="aligncenter" width="605"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;12&#47;perfect.png"><img class="size-full wp-image-323" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;12&#47;perfect.png" alt="If the Cosmic Pi detected 100% of all muons passing through the scintillator, this is the statistical distribution we could expect." width="605" height="340" &#47;><&#47;a> If the Cosmic Pi detected 100% of all muons passing through the scintillator, this is the statistical distribution we could expect.[&#47;caption]</p>
+<p>A quick glance at the graph indicates that most seconds will have either 0 or 1 events. A smaller number will have 2 events and only 3% will have up to 3 events. This is good news, in that it means we can be relatively relaxed with regards to the electronics design, as an event rate exceeding 5 Hz is very unlikely. This isn't the case for LHC experiments, which experience a huge event rate and consequently suffer from <a href="http:&#47;&#47;www.quantumdiaries.org&#47;tag&#47;pileup&#47;">pile up problems that need to be solved.<&#47;a> We had calculated our expected maximum event rate before starting the design - which is why we used 5 Hz as the maximum.</p>
+<p>However, the construction of a perfect detector is a virtually impossible task. Due to the limitations of the technology used (and the budget), Cosmic Pi isn't going to be able to detect all the muons that go through the slab. We are still working on quantifying the detection efficiency of the system, but for now let's assume that it's 25% (i.e. 1 in 4 of the muons we see is detected as an event, the other 3 escape). This has a significant impact on the statistical distribution we can expect:</p>
+<table border="0" cellspacing="0">
+<colgroup span="12" width="85"><&#47;colgroup></p>
+<tbody>
+<tr>
+<td align="left" height="17">Events per second<&#47;td></p>
+<td align="right">0<&#47;td></p>
+<td align="right">1<&#47;td></p>
+<td align="right">2<&#47;td></p>
+<td align="right">3<&#47;td></p>
+<td align="right">4<&#47;td></p>
+<td align="right">5<&#47;td></p>
+<td align="right">6<&#47;td></p>
+<td align="right">7<&#47;td></p>
+<td align="right">8<&#47;td></p>
+<td align="right">9<&#47;td></p>
+<td align="right">10<&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td align="left" height="17">P(X=e)<&#47;td></p>
+<td align="right">0.84<&#47;td></p>
+<td align="right">0.15<&#47;td></p>
+<td align="right">0.01<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td></p>
+<td align="right">0.00<&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td align="left" height="17">P(X<=e)<&#47;td></p>
+<td align="right">0.84<&#47;td></p>
+<td align="right">0.99<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td></p>
+<td align="right">1.00<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+As you can see from the table and the graph below, the probability that we will now see 2 muons in a given second becomes very small at 1%.</p>
+<p>[caption id="attachment_324" align="aligncenter" width="605"]<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;12&#47;imperfect.png"><img class="size-full wp-image-324" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;12&#47;imperfect.png" alt="If we assume that only 25% of muons passing through a Cosmic Pi are detected, this is what we can expect." width="605" height="340" &#47;><&#47;a> If we assume that only 25% of muons passing through a Cosmic Pi are detected, this is what we can expect.[&#47;caption]</p>
+<p>In summary, we can therefore realistically expect that in a typical second 0 muons will be detected, with a 15% probability that one muon will be detected. This helps us to understand what kind of data we should be getting out of the unit and at a human level, how often the event indicator should flash if we're really seeing muons.</p>

@@ -1,0 +1,50 @@
+---
+layout: post
+status: publish
+published: true
+title: Mini-Hackathon June 2015 - Cranking the gears onwards
+author:
+  display_name: Hugo Day
+  login: hugo
+  email: hday@cern.ch
+  url: ''
+author_login: hugo
+author_email: hday@cern.ch
+wordpress_id: 55
+wordpress_url: http://cosmicpi.org/?p=55
+date: '2015-06-20 14:45:11 +0200'
+date_gmt: '2015-06-20 13:45:11 +0200'
+categories:
+- Blog
+tags: []
+comments:
+- id: 1660
+  author: Howard A. Landman
+  author_email: howard@riverrock.org
+  author_url: ''
+  date: '2016-04-09 01:24:41 +0200'
+  date_gmt: '2016-04-09 00:24:41 +0200'
+  content: I'm interested in watching muon decays and estimating lifetimes using a
+    cheap, low power, low voltage device, so I was very excited when I first heard
+    of this, but it looks way too slow for my purposes.  I think I need 20 nS resolution
+    or better.
+- id: 1666
+  author: Le&iuml;la Haegel
+  author_email: leila.haegel@gmail.com
+  author_url: ''
+  date: '2016-04-11 10:24:06 +0200'
+  date_gmt: '2016-04-11 09:24:06 +0200'
+  content: We are also thinking it could be a nice experiment to do, and having a
+    eye at the time resolution to do that. Using the GPS time is a good way to get
+    around the issue of signal treatment taking some time, so it may happen to get
+    the muon livetime from 2 CosmicPis !
+---
+<p>It's the weekend of the 20th June 2015, and we're spread over IdeaSquare at CERN. Some of us are in an electronics lab, running wires, testing chips, a few running Arduinos through their paces for IO tests, others simulating what a cosmic ray shower looks like on a group of detectors. And I'm writing blog posts like this.&nbsp; And coffee, all the coffee.</p>
+<p>We're having ourselves a little sprint, a mini-hackathon, a focused push to make progress on some of the outstanding issues we have with the CosmicPi project. We started with those most glorious of things, a block diagram. For an idea, this where we're starting from:</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;makethon_organization.pptx.jpg"><img class="aligncenter wp-image-57 size-full" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;makethon_organization.pptx.jpg" alt="makethon_organization.pptx" width="1280" height="720" &#47;><&#47;a></p>
+<p>More info on what these things all mean will come soon, I promise! Breaking it down further, we came up with some broad tasks for today:</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;makethon_organization.pptx1_.jpg"><img class="aligncenter wp-image-58 size-full" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;makethon_organization.pptx1_.jpg" alt="makethon_organization.pptx(1)" width="1280" height="720" &#47;><&#47;a></p>
+<p>Not too focused, but gives each of us some common goals for the day. Already we've made some progress!<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;IMG_20150620_125517.jpg"><img class="aligncenter wp-image-59 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;IMG_20150620_125517-1024x758.jpg" alt="IMG_20150620_125517" width="474" height="351" &#47;><&#47;a></p>
+<p>What you can see here is part of the read out electronics for the cosmic ray detector. The black padded plates wrapped in tape are the scintillators (need to keep them dark so we don't get stray light in). The boards are the read outs, put on breadboard for testing (so we can change things quickly). In reality this'll be something the size of a book once we've ironed out the kinks. Does it work? Well...</p>
+<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;IMG_20150620_134703.jpg"><img class="aligncenter wp-image-60 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2015&#47;06&#47;IMG_20150620_134703-1024x758.jpg" alt="IMG_20150620_134703" width="474" height="351" &#47;><&#47;a></p>
+<p>Yes! This is a signal, for a cosmic ray, coming from the scintillator! The purple and green lines are the signal from the sensors directly (about 50ns long, really short!), the blue one after it's been through the electronics (about 5&micro;s, readable by cheap electronics). We can see cosmics! Now to digitise it, put in into a computer, and do something with it!</p>
