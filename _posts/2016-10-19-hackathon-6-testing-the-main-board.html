@@ -32,7 +32,7 @@ comments:
   date: '2016-11-28 12:25:04 +0100'
   date_gmt: '2016-11-28 12:25:04 +0100'
   content: I am hoping to run a Raspberry Pi 3 soon to collect the earthquake data
-    that I process daily. This would be on 24&#47;7&#47;365. Would this unit be able
+    that I process daily. This would be on 24/7/365. Would this unit be able
     to run with that?
 - id: 2698
   author: Le&iuml;la Haegel
@@ -46,40 +46,40 @@ comments:
     Good idea to look at earthquakes, we saw there were nice applications to do this way and we are glad somebody is thinking about other physics than cosmic rays.
 ---
 <p>&nbsp;</p>
-<p><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-16-19.19.56.jpg"><img class="aligncenter wp-image-280 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-16-19.19.56-1024x768.jpg" alt="Test probes" width="780" height="585" &#47;><&#47;a>This weekend we finally got our hands on our fully assembled Main Board PCB's. They provide the core functionality that makes Cosmic Pi work, specifically:</p>
+<p><a href="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-16-19.19.56.jpg"><img class="aligncenter wp-image-280 size-large" src="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-16-19.19.56-1024x768.jpg" alt="Test probes" width="780" height="585" /></a>This weekend we finally got our hands on our fully assembled Main Board PCB's. They provide the core functionality that makes Cosmic Pi work, specifically:</p>
 <ul>
-<li>GPS to locate the unit in time and space<&#47;li>
-<li>Altimeter to confirm the altitude (and help predict the weather!)<&#47;li>
-<li>3 Axis accelerometer &amp; magnetometer to confirm the orientation of the box<&#47;li>
-<li>Temperature and humidity sensor to check the local environmental conditions and monitor the plastic scintillator<&#47;li>
-<li>Boost Power Supply, to provide the bias voltage for the Silicon Photomultiplier sensors<&#47;li>
-<li>Voltage reference and variable&nbsp;trigger&nbsp;threshold generation with two comparators and trigger output<&#47;li><br />
-<&#47;ul><br />
-<a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-10-16.19.18.jpg"><img class="aligncenter wp-image-283 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-10-16.19.18-1024x768.jpg" alt="Main Board - Bottom" width="780" height="585" &#47;><&#47;a><a href="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-10-16.19.29.jpg"><img class="aligncenter wp-image-282 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;2016-10-10-16.19.29-1024x768.jpg" alt="Main board - top" width="780" height="585" &#47;><&#47;a></p>
+<li>GPS to locate the unit in time and space</li>
+<li>Altimeter to confirm the altitude (and help predict the weather!)</li>
+<li>3 Axis accelerometer &amp; magnetometer to confirm the orientation of the box</li>
+<li>Temperature and humidity sensor to check the local environmental conditions and monitor the plastic scintillator</li>
+<li>Boost Power Supply, to provide the bias voltage for the Silicon Photomultiplier sensors</li>
+<li>Voltage reference and variable&nbsp;trigger&nbsp;threshold generation with two comparators and trigger output</li><br />
+</ul><br />
+<a href="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-10-16.19.18.jpg"><img class="aligncenter wp-image-283 size-large" src="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-10-16.19.18-1024x768.jpg" alt="Main Board - Bottom" width="780" height="585" /></a><a href="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-10-16.19.29.jpg"><img class="aligncenter wp-image-282 size-large" src="http://cosmicpi.org/wp-content/uploads/2016/10/2016-10-10-16.19.29-1024x768.jpg" alt="Main board - top" width="780" height="585" /></a></p>
 <p>We tested the systems on the basis of their electrical connection to the Arduino Due which sits undernea<br />
 th the main board. In fact we use the following busses to talk to the peripheral devices:</p>
 <ul>
-<li>UART (bus 1) to talk to the GPS (RX&#47;TX at 9600bps)<&#47;li>
-<li>I2C (bus 0) to talk to the variable threshold circuit (actually a MAX5387 digital potentiometer)<&#47;li>
-<li>I2C (bus 1) to talk to the Accelerometer, Pressure Sensor and Humidity Sensor<&#47;li>
-<li>SPI (using bit-banging) to talk to the Boost Power Supply<&#47;li><br />
-<&#47;ul><br />
+<li>UART (bus 1) to talk to the GPS (RX/TX at 9600bps)</li>
+<li>I2C (bus 0) to talk to the variable threshold circuit (actually a MAX5387 digital potentiometer)</li>
+<li>I2C (bus 1) to talk to the Accelerometer, Pressure Sensor and Humidity Sensor</li>
+<li>SPI (using bit-banging) to talk to the Boost Power Supply</li><br />
+</ul><br />
 Over the weekend we tested a number of systems, using a production test system specification we've been working on for the last few weeks. The basis of the test is to prove the electrical connections to each item of hardware or sub-system, such that we can validate our design in the first instance, and the production units in the second. So far we've done the following tests on the hardware:</p>
 <ul>
-<li>GPS - confirm position, bi-directional communications and firmware version for the receiver (Quectel L76) - Working<&#47;li>
-<li>Variable trigger - setting digital potentiometer threshold and reading back the value with a digital volt meter<&#47;li>
-<li>Accelerometer, Pressure Sensor and Humidity Sensor - validation of communications to addresses over the I2C bus<&#47;li>
-<li>Boost Power Supply - setting voltage value via big-banging SPI protocol over discrete pins and reading the voltage back with a digital volt meter<&#47;li>
-<li>Trigger output - application of a simultaneous analogue signal to both inputs to confirm the creation of a trigger pulse<&#47;li><br />
-<&#47;ul><br />
-You can watch all our video lab reports on our <a href="https:&#47;&#47;www.youtube.com&#47;channel&#47;UC81JDGETvtIgFZjk9g81ORg">Cosmic Pi YouTube channel<&#47;a>. Although we now have all the hardware working, we picked up a few bugs in the design along the way. Here's a headline summary for anyone who's already built&#47;building their own <a href="http:&#47;&#47;www.ohwr.org&#47;attachments&#47;download&#47;4554&#47;Cosmic_Pi_Main_PCB_V2_Alpha_OHWR.zip">Version 2 alpha main board<&#47;a> (if you are please get in touch!):</p>
+<li>GPS - confirm position, bi-directional communications and firmware version for the receiver (Quectel L76) - Working</li>
+<li>Variable trigger - setting digital potentiometer threshold and reading back the value with a digital volt meter</li>
+<li>Accelerometer, Pressure Sensor and Humidity Sensor - validation of communications to addresses over the I2C bus</li>
+<li>Boost Power Supply - setting voltage value via big-banging SPI protocol over discrete pins and reading the voltage back with a digital volt meter</li>
+<li>Trigger output - application of a simultaneous analogue signal to both inputs to confirm the creation of a trigger pulse</li><br />
+</ul><br />
+You can watch all our video lab reports on our <a href="https://www.youtube.com/channel/UC81JDGETvtIgFZjk9g81ORg">Cosmic Pi YouTube channel</a>. Although we now have all the hardware working, we picked up a few bugs in the design along the way. Here's a headline summary for anyone who's already built/building their own <a href="http://www.ohwr.org/attachments/download/4554/Cosmic_Pi_Main_PCB_V2_Alpha_OHWR.zip">Version 2 alpha main board</a> (if you are please get in touch!):</p>
 <ul>
-<li>Missing !CS signal from Arduino DUE to MAX1932 boost power supply controller, we had to add an extra jumper wire from a DUE pin.<&#47;li>
-<li>4.096V reference too high for the MAX5387 to operate correctly, to be swapped for a 3.3V reference.<&#47;li>
-<li>Feedback resistors for the MAX1932 incorrectly chosen, to be modified to provide correct voltage output range (25-35V)<&#47;li>
-<li>Trigger NAND gate replaced with an AND gate (same IC package, different logic)<&#47;li>
-<li>Front panel LED's swapped from 2 LED module (Red&#47;Green) to 2 LED module (Green&#47;Green) due to wrong anode&#47;cathode configuration<&#47;li><br />
-<&#47;ul><br />
-A more comprehensive list of the bugs in Main Board Version 2 alpha can be <a href="http:&#47;&#47;www.ohwr.org&#47;documents&#47;501">found here.<&#47;a></p>
-<p>[caption id="attachment_279" align="aligncenter" width="780"]<img class="wp-image-279 size-large" src="http:&#47;&#47;cosmicpi.org&#47;wp-content&#47;uploads&#47;2016&#47;10&#47;cosmic-1024x768.jpg" alt="All in the box!" width="780" height="585" &#47;> Prototype assembly - everything inside the housing![&#47;caption]</p>
+<li>Missing !CS signal from Arduino DUE to MAX1932 boost power supply controller, we had to add an extra jumper wire from a DUE pin.</li>
+<li>4.096V reference too high for the MAX5387 to operate correctly, to be swapped for a 3.3V reference.</li>
+<li>Feedback resistors for the MAX1932 incorrectly chosen, to be modified to provide correct voltage output range (25-35V)</li>
+<li>Trigger NAND gate replaced with an AND gate (same IC package, different logic)</li>
+<li>Front panel LED's swapped from 2 LED module (Red/Green) to 2 LED module (Green/Green) due to wrong anode/cathode configuration</li><br />
+</ul><br />
+A more comprehensive list of the bugs in Main Board Version 2 alpha can be <a href="http://www.ohwr.org/documents/501">found here.</a></p>
+<p>[caption id="attachment_279" align="aligncenter" width="780"]<img class="wp-image-279 size-large" src="http://cosmicpi.org/wp-content/uploads/2016/10/cosmic-1024x768.jpg" alt="All in the box!" width="780" height="585" /> Prototype assembly - everything inside the housing![/caption]</p>
 <p>We will soon be fixing all these things on our main board schematic and layout in a Version 2 release of the main board, which will include the replacement part numbers and all the necessary details to build your own.</p>
