@@ -1,0 +1,174 @@
+---
+# Turn on Jekyll!
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cosmic Pi | The cosmic ray detector on your desktop</title>
+    <meta name='theme-color' content='#2196F3'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+    <meta name="description" content="The Cosmic Pi project aims to build the world's largest open source distributed cosmic ray telescope. You can be a part of the project, by becoming a Cosmic Pixel!">
+    <meta name="keywords" content="cosmic ray, detector, cheap, open source, cern">
+    <meta name="language" content="en">
+    <meta name="robots" content="index, follow">
+
+    <script src="https://use.fontawesome.com/a6e1d461cc.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        html, body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a, a:visited {
+            color: #428bca;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #header-background {
+            background-color: #000000;
+        }
+
+        #header-background {
+            background-color: #000000;
+            background-image: url("assets/images/galaxy_cosmicpi_background.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+
+        header {
+            margin: auto;
+            width: 800px;
+            max-width: 100%;
+            padding: 8px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header img {
+            width: 450px;
+            max-width: 100%;
+            margin-top: 150px;
+        }
+
+        header > h2 {
+            margin-bottom: 30px;
+        }
+
+        header > #subscribe {
+            margin: auto;
+            width: 400px;
+            max-width: 100%;
+            background: transparent;
+        }
+
+        header > #subscribe > #mc_embed_signup {
+            background-color: transparent;
+        }
+
+        header > #subscribe input {
+            float: left;
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        header > #subscribe .email {
+            font-size: 20px;
+            float: left;
+            width: 100%;
+        }
+
+        header > #subscribe .button {
+            float: right;
+        }
+
+        header > #social a {
+            font-size: 30pt;
+            color: #fff;
+            margin: 10px;
+        }
+
+        header > #social {
+            padding: 40px 0;
+        }
+
+        footer {
+            margin: auto;
+            width: 800px;
+            max-width: 100%;
+            padding: 8px;
+            text-align: center;
+        }
+
+        footer menu {
+            padding: 10px 0 60px 0;
+        }
+
+        footer menu a {
+            padding: 0 10px;
+            font-size: 20px;
+        }
+
+        footer p {
+            color: #555555;
+        }
+
+        footer #copyright p {
+            padding: 0;
+            margin: 5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-holder">
+        <div id="header-background">
+            <header>
+                <img src="assets/images/logo_small_transp.png" alt="Cosmic Pi Logo">
+
+                <h2>The cosmic ray detector on your desktop</h2>
+
+                <p>The Cosmic Pi project aims to build the world's largest open source distributed cosmic ray
+                    telescope. You can be a part of the project, by becoming a Cosmic Pixel!</p>
+
+                <p>Read more about the project on our <a href="posts">blog</a>, or go straight to our <a href="http://www.ohwr.org/projects/cosmic-pi">prototype design</a>.</p>
+
+                {% if site.mailchimp %}
+                    <div id="subscribe">
+                    {% include mailchimp-landing.html %}
+                    </div>
+                {% endif %}
+
+                <div id="social">
+                    <a href="http://facebook.com/cosmicpi"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/cosmicpi"><i class="fa fa-twitter"></i></a>
+                    <a href="http://github.com/cosmicpi"><i class="fa fa-github"></i></a>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    <footer>
+        <menu>
+            <a href="posts">Blog</a> ⋅
+            <a href="about">About</a> ⋅
+            <a href="links">Links</a> ⋅
+            <a href="team">Team</a> ⋅
+            <a href="media-press">Media / press</a>
+        </menu>
+
+        <div id="copyright">
+            <p>Copyright © Cosmic Pi Inc. 2015. All Rights Reserved.</p>
+            <p>Background Image Credit: ESA/Hubble, NASA and H. Ebeling.</p>
+        </div>
+    </footer>
+</body>
