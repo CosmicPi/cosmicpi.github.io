@@ -1,15 +1,17 @@
-.page-content {
-    background-color: #000000;
-    background-image: url("/assets/images/galaxy_cosmicpi_background.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-}
+@media screen and (min-width: 900px) {
+    .page-content {
+        background-color: #000000;
+        background-image: url("/assets/images/galaxy_cosmicpi_background.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
 
-.page-content .wrapper {
-    background-color: white;
-    border: 1px solid #000;
-    padding-top: 20px;
-    border-radius: 7px;
+    .page-content .wrapper {
+        background-color: white;
+        border: 1px solid #000;
+        padding-top: 20px;
+        border-radius: 7px;
+    }
 }
