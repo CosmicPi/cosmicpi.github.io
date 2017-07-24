@@ -21,7 +21,7 @@ description: > # this means to ignore newlines until "baseurl:"
   distributed cosmic ray telescope. You can be a part of the project, by
   becoming a Cosmic Pixel!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://cosmicpi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: CosmicPi
 github_username:  CosmicPi
 
