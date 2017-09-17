@@ -35,6 +35,11 @@ How to test a new hardware module? It's a good question. Here are the stages:
     </a>
     <p>Two peaks from two SiPMs inserted into a single scintillator slab. It might even be a muon!</p>
 </div>
+Once we have a scintillator connected we can also profile the accuracy of our amplifier, in terms of our ability to resolve single Photo-Electrons (PE's), these are the nominal minimum unit for detection using an SiPM or MPPC device.
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/FEnvCovFr7k" frameborder="0" allowfullscreen></iframe>
+  [Etam demonstrates PE levels using persistence on the oscilloscope]
+</div>
 6) Test it with a known good scintillator detector. We used a pair of reference scintillators and PMT's set up with a NIM crate in the lab, together with a coincidence unit to filter for muons.
   <div class="image">
     <a href="/uploads/slab overlay.jpg">
@@ -42,7 +47,7 @@ How to test a new hardware module? It's a good question. Here are the stages:
     </a>
     <p>Stacking the slabs vertically to produce simultaneous coincidences in both sets of slabs.</p>
 </div>
-The output from two slabs (one SiPM embedded in each), was then aligned (physically above) the reference slabs so that the overall area was identical. The output from the SiPM analogue channels was connected to a discriminator and coincidence unit, and then connected to measure coincidence with the reference scintillators. The thresholds for all detectors were set to meet the following criteria:
+The output from two slabs (one SiPM embedded in each), was then aligned (physically above) the reference slabs so that the overall area was identical. The output from the SiPM analogue channels was connected to a discriminator and coincidence unit, and then connected to measure coincidence with the reference scintillators. For both the Cosmic Pi and the reference detector there are two variables to be set for each channel; the bias voltage applied to the sensor (SiPM or PMT) and the threshold for an event on that channel. The bias voltages are set according to the temperature and noise figure of each device. The thresholds for all detectors were set to meet the following criteria:
 A) Rate of detected muons = 0 when the two slabs are not overlapping
 B) Rate of detected muons when the two slabs are overlapping is maximised, but does not exceed the background muon rate of approximately 1 muon/cm2/minute.
   <div class="image">
