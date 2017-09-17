@@ -1,0 +1,69 @@
+layout: post
+status: publish
+published: true
+title: Coincidence Detection
+author:
+  display_name: James Devine
+  email: devine.jd@gmail.com
+  ---
+  We've just got some new analogue circuit boards. This post is about how we're testing them.
+  <div class="image">
+    <a href="/uploads/20170912_191816.jpg">
+        <img src="/uploads/20170912_191816.jpg" alt="Analogue Boards V2.4" />
+    </a>
+    <p>Three of our prototype new analogue amplifier boards</p>
+</div>
+
+You can find the design files for them here:  <a href="https://github.com/CosmicPi/ANALOGUE-hardware">
+
+How to test a new hardware module? It's a good question. Here are the stages:
+
+1) Visual inspection of the assembled PCB's (these were manufactured and assembled by Seeed studio using their Fusion service - you can find it here:  <a href="https://www.seeedstudio.com/fusion_pcb.html") where we checked that the parts were well placed, the correct type etc. as expected. 
+2) Power up with the nominal voltage (5V in our case) and check that there are no short circuits by monitoring the current consumption.
+3) Test voltages at various points on the PCB, such as the 4V regulator, input points to the opamps (around 2V) and the output. Here we are looking for the absolute voltage and also noise/ripple/signal using an oscilloscope.
+4) Test with SiPM sensors. Next we have connected 1, and then 2 SiPM sensors, this time round we're using some surplus 1x1mm2 MPPC devices from Hamamatsu. To do this we connected an external voltage source for the bias voltage (68V approximately). We put the analogue output up on a scope, and then increase the bias voltage to trigger noise. This worked out ok and we saw a signal, so we added a second SiPM.
+  <div class="image">
+    <a href="/uploads/One peak.jpg">
+        <img src="/uploads/One peak.jpg" alt="A signal pulse from a single SiPM" />
+    </a>
+    <p>One SiPM pulse measured on the oscilloscope. Note that the timebase is wrong, it should be 200ns</p>
+</div>
+5) Test with a scintillator. Next we inserted the SiPM's into our scintillator slab and reduced the bias voltage to lower the dark count back to a background figure. Now we looked at pulses from the two analogue outputs on the oscilloscope and check for coincidences visually, and also noise.
+  <div class="image">
+    <a href="/uploads/two peaks.jpg">
+        <img src="/uploads/two peaks.jpg" alt="A pair of coincident pulses from a pair of SiPMs" />
+    </a>
+    <p>Two peaks from two SiPMs inserted into a single scintillator slab. It might even be a muon!</p>
+</div>
+6) Test it with a known good scintillator detector. We used a pair of reference scintillators and PMT's set up with a NIM crate in the lab, together with a coincidence unit to filter for muons.
+  <div class="image">
+    <a href="/uploads/slab overlay.jpg">
+        <img src="/uploads/slab overlay.jpg" alt="Stacking up the slabs" />
+    </a>
+    <p>Stacking the slabs vertically to produce simultaneous coincidences in both sets of slabs.</p>
+</div>
+The output from two slabs (one SiPM embedded in each), was then aligned (physically above) the reference slabs so that the overall area was identical. The output from the SiPM analogue channels was connected to a discriminator and coincidence unit, and then connected to measure coincidence with the reference scintillators. The thresholds for all detectors were set to meet the following criteria:
+A) Rate of detected muons = 0 when the two slabs are not overlapping
+B) Rate of detected muons when the two slabs are overlapping is maximised, but does not exceed the background muon rate of approximately 1 muon/cm2/minute.
+  <div class="image">
+    <a href="/uploads/coincidence.jpg">
+        <img src="/uploads/coincidence.jpg" alt="A coincidence between the Cosmic Pi SiPM outputs (analogue) and the reference detector (square wave)" />
+    </a>
+    <p>Two peaks from two SiPMs connected to the Cosmic Pi Analogue amplifier board, occuring at the same time as a coincidence on the reference scintillators. This is very likely to be a muon!</p>
+</div>
+
+7) Perform a statistical analysis of the results - this is the stage that we're at right now! Stay tuned for more progress...
+  <div class="image">
+    <a href="/uploads/statistical analysis.jpg">
+        <img src="/uploads/statistical analysis.jpg" alt="A simple counter" />
+    </a>
+    <p>A simple counter collects events on the reference detector, the Cosmic Pi analogue circuit with a discriminator and coincidence unit, and finally the coincidence of the Cosmic Pi with the reference detector.</p>
+    </div>
+      <div class="image">
+    <a href="/uploads/histogram.jpg">
+        <img src="/uploads/histogram.jpg" alt="Ongoing statistical analysis" />
+    </a>
+    <p>Here we plot the timing distribution of signals captured by the Cosmic Pi and the reference detector. Both are the type of distribution we would expect, however we still have more work to do.</p>
+
+</div>
+  
