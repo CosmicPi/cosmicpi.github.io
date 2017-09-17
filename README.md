@@ -17,7 +17,8 @@ author:
   display_name: James Devine
   email: devine.jd@gmail.com
 ---
-Your content goes here
+Your content goes here in HTML format.
+Don't forget to scale images, otherwise they come out at full size!
 ```
 
 
