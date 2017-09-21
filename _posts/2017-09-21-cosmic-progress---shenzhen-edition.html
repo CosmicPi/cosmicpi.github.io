@@ -1,4 +1,4 @@
----
+ï»¿---
 layout: post
 status: publish
 published: true
@@ -23,7 +23,7 @@ And since August another student, Hendrik, has joined us and will be with us unt
  
 <p>So what have we worked on over the last few months?</p>
 <p>First of all, we moved our website from an old WordPress instance to GitHub. Next a lot of time has been spent on designing the next version of CosmicPi, as well as an intermediate step to allow the electronics and performance to be tested.
-For the near future (i.e. the end of this year) an intermediate is planned, which we’re calling V1.5. This version will improve on the existing design using the Arduino DUE. Mainly by replacing the analogue amplifier board and improving the power supply for the silicon photo-multipliers (SiPM’s). In order to improve the power supply we decided to use two low noise boost converters, providing an independent supply for each sensor on our version 1.5 release. Our new team member Louis has designed a completely new power supply circuit featuring an increased voltage range and higher resolution, which we’ll be sharing the schematic once we’ve integrated it into a prototype PCB. During the same timeframe, another new team member Nikolai has re-designed the analogue amplifier board from the V1 release to employ transimpedance amplification principles.
+For the near future (i.e. the end of this year) an intermediate is planned, which we're calling V1.5. This version will improve on the existing design using the Arduino DUE. Mainly by replacing the analogue amplifier board and improving the power supply for the silicon photo-multipliers (SiPM's). In order to improve the power supply we decided to use two low noise boost converters, providing an independent supply for each sensor on our version 1.5 release. Our new team member Louis has designed a completely new power supply circuit featuring an increased voltage range and higher resolution, which we'll be sharing the schematic once we've integrated it into a prototype PCB. During the same timeframe, another new team member Nikolai has re-designed the analogue amplifier board from the V1 release to employ transimpedance amplification principles.
 The new design can be found <a href="https://github.com/CosmicPi/ANALOGUE-hardware">here</a>.</p>
 <p>A first batch of the new analogue board has already been assembled and is currently being tested by the team. So far the results are promising.</p>
 <p>And you can read more about it in our last post!</p>
@@ -36,7 +36,7 @@ The new design can be found <a href="https://github.com/CosmicPi/ANALOGUE-hardwa
 </div>
 
 
-<p>At the same time we are working on a Version 2 of CosmicPi. The Version 2 will build on many of the design elements of the Version 1.5, such as the improved analogue board whilst introducing our new power supply design. The Version 2 will move away from the Arduino DUE and the current digital hardware model for data acquisition. Instead a FPGA will be used to read out two high speed analog to digital converters (ADC), which run at approximately 100 MHz. With these ADCs the amplified signal from the SiPM’s can be read directly, without the need for a pulse shaper as in our Version 1 design. This will improve the precision of the received data as well as providing more options to analyze the data we get from the SiPM’s. The FPGA is then directly connected to a single board computer (SBC) such as the Raspberry Pi (or the lower cost Orange Pi) via GPIO-Pins. All other sensors, such as GPS, accelerometer and the temperature sensor will be read out by the single board computer, since this is not time critical like the SiPM readout.</p>
+<p>At the same time we are working on a Version 2 of CosmicPi. The Version 2 will build on many of the design elements of the Version 1.5, such as the improved analogue board whilst introducing our new power supply design. The Version 2 will move away from the Arduino DUE and the current digital hardware model for data acquisition. Instead a FPGA will be used to read out two high speed analog to digital converters (ADC), which run at approximately 100 MHz. With these ADCs the amplified signal from the SiPM's can be read directly, without the need for a pulse shaper as in our Version 1 design. This will improve the precision of the received data as well as providing more options to analyze the data we get from the SiPM's. The FPGA is then directly connected to a single board computer (SBC) such as the Raspberry Pi (or the lower cost Orange Pi) via GPIO-Pins. All other sensors, such as GPS, accelerometer and the temperature sensor will be read out by the single board computer, since this is not time critical like the SiPM readout.</p>
 <p>Darko has been working a lot on the software for the FPGA. He has taken the first steps in validating a design for the software and implementing this into VHDL.
 The high level design can be seen below and the corresponding code can be found <a href="https://github.com/CosmicPi/cosmicpi-fpga">here</a>.</p>
 <div class="video">
@@ -77,7 +77,7 @@ Hendrik has started designing the software that is going to run on the Raspberry
 </div>
  
 <p>Shenzhen is a great city for hardware development and we wanted to see if an extended stay there could be useful for the project. In general hardware and hardware production means are readily available there. While James, Darko and Tong stayed in Shenzhen for one week, Hendrik was able to stay two weeks longer.</p>
-<p>Rather disappointingly “special” parts, such as scintillators and SiPM’s (which are only really used for High Energy Physics applications) are very hard to find there. So we decided to explore different ways of detecting cosmic rays without scintillators, using silicon - of which there is an abundance in Shenzhen.
+<p>Rather disappointingly "special" parts, such as scintillators and SiPM's (which are only really used for High Energy Physics applications) are very hard to find there. So we decided to explore different ways of detecting cosmic rays without scintillators, using silicon - of which there is an abundance in Shenzhen.
 One approach we evaluated was to use CMOS or CCD sensors for directly detecting ionizing particles.
 These sensors can be extremely cheap, with CMOS image sensors as used in smartphones available from as little as 50 cents each.
 However the cheaper sensors require advanced manufacturing methods for the PCB (4 layers with blind vias), making small volume prototyping for this approach very expensive.
