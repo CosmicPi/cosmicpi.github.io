@@ -9,16 +9,17 @@ https://github.com/CosmicPi/cosmicpi.github.io/new/master/_posts
 
 **Filename** for the new article should be in a format `yyyy-mm-dd-your-title.html` (eg. `2015-04-15-the-birth-of-cosmic-pi.html`) and **Post Template**:  
 ```
+---
 layout: post
 status: publish
 published: true
 title: Your Title
 author:
-  display_name: James Devine
-  email: devine.jd@gmail.com
+  display_name: Your name
+  email: Your e-mail adress
 ---
 Your content goes here in HTML format.
-Don't forget to scale images, otherwise they come out at full size!
+Don't forget to scale images, otherwise they come out at full size and take forever to load!
 ```
 
 
