@@ -1,0 +1,25 @@
+#!/bin/bash
+# Usage: curl https://gist.githubusercontent.com/lukicdarkoo/e33e00c6780ad0215d3932b810a10e46/raw | sh
+
+echo "In case of any issues please consult cosmicpi.org for help, or contact us via Facebook "
+
+echo "--- Expand the file system ---"
+sudo resize2fs /dev/mmcblk0p2
+
+echo "--- Update OS ---"
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install git python-setuptools python-pip
+#sudo apt -y install python3-pip git
+
+echo "--- Install CosmicPi software ---"
+#sudo pip3 install cosmicpi -U
+sudo pip install flask_cors
+git clone --depth 1 -b rest https://github.com/CosmicPi/cosmicpi-rpi_V1.5.git /tmp/cosmicpi
+(cd /tmp/cosmicpi/; sudo python setup.py install)
+
+echo "--- Configure AP mode ---"
+curl https://gist.githubusercontent.com/lukicdarkoo/6b92d182d37d0a10400060d8344f86e4/raw | sh -s FooSSID FoooPass CosmicPi cosmicpi
+# Previous version is available at: https://pastebin.com/00BXKBA2
+
+sudo reboot
