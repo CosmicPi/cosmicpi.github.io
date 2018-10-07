@@ -9,7 +9,7 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.3.1"
+gem "jekyll", "3.8.4"
 # gem "github-pages", group: :jekyll_plugins
 gem "minima", "~> 2.0"
 # gem "jekyll-theme-hacker", "~> 0.0.3"

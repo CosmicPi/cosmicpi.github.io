@@ -32,10 +32,8 @@ disqus:
 markdown: kramdown
 #theme: jekyll-theme-hacker
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
-
-keep_files: configure
