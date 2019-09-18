@@ -1,0 +1,103 @@
+---
+layout: post
+status: publish
+published: true
+title: Troubleshooting for Cosmic Pi V1.6
+author: 
+  display_name: James Devine
+  email: devine.jd@gmail.com
+---
+
+
+<body lang=EN-GB link="#0563C1" vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-US>Cosmic Pi – Advanced Setup and  Troubleshooting
+(V1.6)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>What happens if your Cosmic Pi doesn’t work
+when you get it out of the box? Here are some common issues we’ve encountered
+during testing, if your issue isn’t in the list drop us a line!</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Symptom: Nothing happens at all!</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1) Check the power supply</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Sometimes the power adapters don’t connect
+correctly with the barrel socket on the front of the box. In this case it’s
+normally enough to carefully unplug and re-plug it, checking that the power
+supply light comes on. You can power the unit with any 7V-12V DC power adapter
+if you are concerned about the one that was shipped with the device.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Symptom: No Wi-Fi network appears</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1) Wait a few minutes</span></p>
+
+<p class=MsoNormal><span lang=EN-US>It can take 4-5 minutes for the WiFi
+network cosmic pi to be stable when you first power up the device, if it
+appears and disappears, it’s probably because your raspberry pi inside the box
+has been re-booting (normal on first power on). </span></p>
+
+<p class=MsoNormal><span lang=EN-US>2) If it still doesn’t appear</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Check that you haven’t put your cosmic pi
+on top of a metal surface (this interferes with the Wi-Fi propagation – if you
+move it to a desk or table and try again the network should be visible).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>If the Wi-Fi network still doesn’t appear
+(it’ll be in the 2.4GHz Wi-Fi range), the SD card has probably been corrupted
+(it can happen if the device is power cycled during boot-up). To fix this we’ll
+need to re-image the SD card as follows:</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Unplug the device from the power and GPS
+cables.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Turn the device over and remove the two
+recessed screws that hold the top of the case shell in place.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>With the device the right way up, remove
+the top case shell.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Carefully remove the microSD card from the
+Raspberry Pi Zero W which is secured to the floor of the bottom case shell.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Insert the microSD card into an adapter for
+a full size card (if required).</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Download the Cosmic Pi V1.6 image from
+here:</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="https://www.dropbox.com/s/mwvej5bho11x9so/CosmicPiV16.zip?dl=0">https://www.dropbox.com/s/mwvej5bho11x9so/CosmicPiV16.zip?dl=0</a>
+         </span></p>
+
+<p class=MsoNormal><span lang=EN-US>Once the image is downloaded and unzipped,
+follow the instructions here to copy it to the SD card.</span></p>
+
+<p class=MsoNormal><a
+href="https://www.raspberrypi.org/documentation/installation/installing-images/">https://www.raspberrypi.org/documentation/installation/installing-images/</a>
+</p>
+
+<p class=MsoNormal><span lang=EN-US>Replace the microSD card in the Raspberry
+Pi and close up the case.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Connect the GPS and power cables, it should
+boot and create the cosmic pi Wi-Fi hot spot as normal. Note that on the first
+boot, the device will re-start itself as the SD card partitions are sized to
+fill the full card, which may cause the network to disappear and then
+re-appear. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>Hopefully it’s now going to detect some
+cosmic rays! If you are unsure about the performance of your device, you can
+also look at the test logs we recorded before shipping here:</span></p>
+
+<p class=MsoNormal><a href="https://github.com/CosmicPi/calibrationdocsV1.6">https://github.com/CosmicPi/calibrationdocsV1.6</a></p>
+
+</div>
+
+</body>
